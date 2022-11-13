@@ -22,6 +22,8 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 
+import ThemeToggleButton from './ThemeToggleButton'
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -89,6 +91,7 @@ export default function WithSubnavigation() {
             Sign Up
           </Button>
         </Stack>
+        <ThemeToggleButton />
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
