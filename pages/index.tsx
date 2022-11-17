@@ -20,25 +20,10 @@ import {
 export default function Home() {
 
   return (
-    <Box w={{ base: "1280px", md: "800px", lg: "500px" }}>
-        <Box bg="red.200" w={{ base: "300px", md: "400px", lg: "500px" }}>
+    <Box className="wrap" w={{ base: "414px", md: "834px", lg: "100%" }} display='flex' justifyContent='center' alignItems='center'>
+        <Box className="content" w={{ base: "414px", md: "834px", lg: "100%" }} display='flex' justifyContent='center' alignItems='center' bg='gray.100'>
           This is a box 
         </Box>
-
-      <Input
-        w="30%"
-        m="5"
-        type="text"
-        placeholder="Input Field"
-        color="blue.800"
-        bg="blue.50"
-        rounded="2xl"
-        border="0"
-        _focus={{
-          bg: "blue.200",
-          outline: "none",
-        }}
-      />
     </Box>
   )
 }
