@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import Header from '../src/components/Header'
-
+import "../styles/layout.scss";
 const colors = {
   brand: {
     900: '#1a365d',
