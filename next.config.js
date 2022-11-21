@@ -4,7 +4,6 @@ const nextConfig = {
   swcMinify: true,
 }
 
-// next.config.js
 module.exports = {
   images: {
     remotePatterns: [
