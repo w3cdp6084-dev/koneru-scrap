@@ -13,7 +13,7 @@ export default function Card() {
     <Center py={6}>
       <Box
         maxW={'445px'}
-        w={'full'}
+        w={'100%'}
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}
         rounded={'md'}
@@ -30,8 +30,10 @@ export default function Card() {
             src={
               'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
             }
-            width={500}
-            height={500}
+            width={320}
+            height={180}
+            p={24}
+            rounded={16}
           />
         </Box>
         
