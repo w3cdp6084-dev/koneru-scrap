@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
   return (
-    <div>
+    <footer>
       <Box 
         bg="#f1f5f9"
         p="10" 
@@ -16,6 +16,6 @@ export default function Footer() {
         >
       <Text fontSize="sm" align="center">© KONEKONE. All rights reserved.</Text>
       </Box>
-    </div>
+    </footer>
   )
 }
