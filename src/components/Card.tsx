@@ -21,7 +21,7 @@ export default function Card() {
         overflow={'hidden'}>
         <Box
           h={'100%'}
-          bg={'gray.100'}
+          bg={'white'}
           mt={-6}
           mx={-6}
           mb={6}
