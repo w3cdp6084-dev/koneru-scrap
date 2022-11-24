@@ -20,7 +20,7 @@ export default function Card() {
         p={6}
         overflow={'hidden'}>
         <Box
-          h={'210px'}
+          h={'100%'}
           bg={'gray.100'}
           mt={-6}
           mx={-6}
