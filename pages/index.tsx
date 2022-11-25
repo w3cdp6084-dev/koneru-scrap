@@ -31,6 +31,8 @@ export default function Home({ koneruscrap }) {
               <Link href={`/koneruscrap/${koneruscrap.id}`}>
                 {koneruscrap.title}
               </Link>
+              <p>{koneruscrap.date}</p>
+              <p>{koneruscrap.category}</p>
             </li>
           ))}
         </ul>
@@ -40,7 +42,6 @@ export default function Home({ koneruscrap }) {
 }
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "koneruscrap" });
-
   return {
     props: {
       koneruscrap: data.contents,
