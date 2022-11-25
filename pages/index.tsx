@@ -7,7 +7,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -15,14 +14,36 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
-
+import { client } from '../src/libs/client'
 import Card from '../src/components/Card';
-
-export default function Home() {
+import Link from "next/link";
+export default function Home({ koneruscrap }) {
 
   return (
-    <Box className="wrap" w={{ base: "414px", md: "834px", lg: "100%" }} display='flex' justifyContent='center' alignItems='center'>
-      <Card />
-    </Box>
+    <div>
+      <Box className="wrap" w={{ base: "414px", md: "834px", lg: "100%" }} display='flex' justifyContent='center' alignItems='center'>
+        <Card />
+      </Box>
+      <div>
+        <ul>
+          {koneruscrap.map((koneruscrap) => (
+            <li key={koneruscrap.id}>
+              <Link href={`/koneruscrap/${koneruscrap.id}`}>
+                {koneruscrap.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   )
 }
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "koneruscrap" });
+
+  return {
+    props: {
+      koneruscrap: data.contents,
+    },
+  };
+};
