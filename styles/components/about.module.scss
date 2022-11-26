@@ -1,0 +1,40 @@
+.mainWrap{
+    max-width: 1280px;
+    margin: 0 auto;
+    .logoWrap{
+        display: grid;
+        place-items: center;
+        width: 264px;
+        height: 264px;
+        padding: 32px;
+        border: 32px solid #E3E6EC;
+        box-sizing: border-box;
+        box-shadow: inset 18px 18px 30px #D1D9E6, inset -18px -18px 30px #FFFFFF;
+        border-radius: 160px;
+        .logo{
+            background: #E3E6EC;
+            box-shadow: 28.6154px 28.6154px 31.7949px #D1D9E6, -28.6154px -28.6154px 31.7949px rgba(255, 255, 255, 0.5);
+            border-radius: 100px;
+            width: 132px;
+            img{
+                width: 100%;
+                padding: 16px;
+            }
+        }
+    }
+}
+.contentWrap{
+    display: grid;
+    place-items: center;
+}
+
+.btnWrap{
+    background: #E3E6EC;
+    box-shadow: 28.6154px 28.6154px 31.7949px #D1D9E6, -28.6154px -28.6154px 31.7949px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin-bottom: 48px;
+    padding: 16px 90px;
+    p{
+        color: #4a4a4a;
+    }
+}
