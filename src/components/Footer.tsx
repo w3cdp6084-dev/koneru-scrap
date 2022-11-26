@@ -1,3 +1,4 @@
+import styles from "../../styles/components/Footer.module.scss";
 import {
     Box,
     Text,
@@ -7,7 +8,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <Box 
         bg="#f1f5f9"
         p="10" 
