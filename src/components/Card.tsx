@@ -7,9 +7,13 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { client } from '../libs/client'
+import Link from "next/link";
 
-export default function Card() {
+export default function Card({ koneruscrap }) {
+
   return (
+    <div>
     <Center py={6}>
       <Box
         maxW={'445px'}
@@ -35,8 +39,21 @@ export default function Card() {
             p={24}
             rounded={16}
           />
+
         </Box>
-        
+        <div>
+            <ul>
+              {koneruscrap.map((koneruscrap) => (
+                <li key={koneruscrap.id}>
+                  <Link href={`/koneruscrap/${koneruscrap.id}`}>
+                    {koneruscrap.title}
+                  </Link>
+                  <p>{koneruscrap.date}</p>
+                  <p>{koneruscrap.category}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         <Stack>
           <Text
             color={'green.500'}
@@ -63,5 +80,15 @@ export default function Card() {
         </Stack>
       </Box>
     </Center>
+    </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "koneruscrap" });
+  return {
+    props: {
+      koneruscrap: data.contents,
+    },
+  };
+};
