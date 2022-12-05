@@ -1,13 +1,13 @@
 import { client } from "../../src/libs/client";
 
-export default function BlogId({ koneruscrap }) {
+export default function BlogId({ blog }) {
   return (
     <main>
-      <h1>{koneruscrap.title}</h1>
-      <p>{koneruscrap.publishedAt}</p>
+      <h1>{blog.title}</h1>
+      <p>{blog.publishedAt}</p>
       <div
         dangerouslySetInnerHTML={{
-          __html: `${koneruscrap.body}`,
+          __html: `${blog.body}`,
         }}
       />
     </main>
@@ -16,7 +16,7 @@ export default function BlogId({ koneruscrap }) {
 
 
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "koneruscrap" });
+  const data = await client.get({ endpoint: "blog" });
 
   const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
@@ -25,11 +25,11 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "koneruscrap", contentId: id });
+  const data = await client.get({ endpoint: "blog", contentId: id });
 
   return {
     props: {
-        koneruscrap: data,
+        blog: data,
     },
   };
 };

@@ -16,20 +16,20 @@ import {
 } from '@chakra-ui/react';
 import Link from "next/link";
 import { client } from '../src/libs/client';
-export default function Home({koneruscrap}) {
+export default function Home({blog}) {
 
   return (
     <div>
       <Box className="wrap" w={{ base: "414px", md: "834px", lg: "100%" }} display='flex' justifyContent='center' alignItems='center'>
       <div>
             <ul>
-              {koneruscrap.map((koneruscrap) => (
-                <li key={koneruscrap.id}>
-                  <Link href={`/koneruscrap/${koneruscrap.id}`}>
-                    {koneruscrap.title}
+              {blog.map((blog) => (
+                <li key={blog.id}>
+                  <Link href={`/blog/${blog.id}`}>
+                    {blog.title}
                   </Link>
-                  <p>{koneruscrap.date}</p>
-                  <p>{koneruscrap.category}</p>
+                  <p>{blog.date}</p>
+                  <p>{blog.category}</p>
                 </li>
               ))}
             </ul>
@@ -39,11 +39,11 @@ export default function Home({koneruscrap}) {
   )
 }
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "koneruscrap" });
+  const data = await client.get({ endpoint: "blog" });
   console.log(data);
   return {
     props: {
-      koneruscrap: data.contents,
+      blog: data.contents,
     },
   };
 };
